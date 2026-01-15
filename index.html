@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>La Importancia de la Salud</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+<h1>La Importancia de la Salud</h1>
+</header>
+
+
+<main>
+<section>
+<p>
+La salud es muy importante porque nos permite disfrutar de la vida y sentirnos bien.
+Para mantenerla debemos comer bien, hacer ejercicio, dormir suficiente y cuidar nuestra mente.
+</p>
+</section>
+
+
+<section class="links">
+<h2>Centros de Salud Oficiales</h2>
+<a href="https://www.gob.mx/salud" target="_blank">Secretaría de Salud</a>
+<a href="https://www.imss.gob.mx" target="_blank">IMSS</a>
+<a href="https://www.gob.mx/issste" target="_blank">ISSSTE</a>
+<a href="https://www.who.int/es" target="_blank">OMS</a>
+</section>
+
+
+<h2>Registrar datos</h2>
+<form id="formulario">
+<label>Nombre:</label><input id="nombre" required>
+<label>Apellidos:</label><input id="apellidos" required>
+<label>Edad:</label><input type="number" id="edad" required>
+<label>Peso (kg):</label><input type="number" id="peso" step="any" required>
+<label>Talla (m):</label><input type="number" id="talla" step="any" required>
+<label>Dirección:</label><input id="direccion" required>
+<button type="submit">Guardar Datos</button>
+</form>
+<h2>Datos Guardados</h2>
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Apellidos</th>
+<th>Edad</th>
+<th>Peso (kg)</th>
+<th>Talla (m)</th>
+<th>IMC</th>
+<th>Clasificación</th>
+<th>Dirección</th>
+<th>Acciones</th>
+</tr>
+</thead>
+<tbody id="tabla"></tbody>
+</table>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
