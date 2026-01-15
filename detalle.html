@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Detalle de Salud</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main id="detalle"></main>
+<script>
+const d = JSON.parse(localStorage.getItem('detalleSeleccionado'));
+const contenido = {
+'Bajo peso':{
+recomendaciones:['Mantener alimentación equilibrada','Ejercicio suave','Chequeos preventivos'],
+info:'info.html#bajo',
+},
+'Normal':{
+recomendaciones:['Mantener alimentación equilibrada','Ejercicio regular','Chequeos preventivos'],
+info:'info.html#normal',
+},
+'Sobrepeso':{
+recomendaciones:['Control de porciones','Actividad física','Seguimiento nutricional'],
+info:'info.html#sobrepeso',
+},
+'Obesidad':{
+recomendaciones:['Plan nutricional','Ejercicio supervisado','Consulta médica'],
+info:'info.html#obesidad',
+}
+};
+const c = contenido[d.clasificacion];
+document.getElementById('detalle').innerHTML = `
+<h2>${d.clasificacion}</h2>
+<p><strong>IMC:</strong> ${d.imc.toFixed(2)}</p>
+<p><strong>Ciudad:</strong> General</p>
+<div class="aviso">Las recomendaciones son informativas y no sustituyen una consulta médica.</div>
+<ul>${c.recomendaciones.map(r=>`<li>${r}</li>`).join('')}</ul>
+<a href="${c.info}">Ver información sobre ${d.clasificacion}</a>
+<hr>
+<a href="index.html">← Volver a registros</a>`;
+</script>
+</body>
+</html>
